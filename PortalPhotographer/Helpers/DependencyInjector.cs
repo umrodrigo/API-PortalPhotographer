@@ -1,4 +1,6 @@
-﻿using Data;
+﻿using Api.ViewModel;
+using Api.ViewModel.Interface;
+using Data;
 
 namespace Api.Helpers
 {
@@ -25,6 +27,8 @@ namespace Api.Helpers
 
         public static IServiceCollection RegisterServices(IServiceCollection services)
         {
+            services.AddScoped<IUserViewModel, UserViewModel>();
+
             Services = services;
             return services;
         }

@@ -1,6 +1,8 @@
 ﻿using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace Api.Helpers
 {
@@ -19,6 +21,11 @@ namespace Api.Helpers
             });
 
             return services;
+        }
+
+        public static void AddServices(this IServiceCollection services)
+        {
+            Injector.RegisterServices(services);
         }
     }
 }

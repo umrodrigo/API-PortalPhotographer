@@ -1,15 +1,13 @@
-﻿using Data;
-using Data;
-using Data.Models;
+﻿using Data.Models;
 using Data.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Clients
 {
-    public class EntityUserRep
+    public class UserRep
     {
         private readonly IRepository<EntityUser> repo;
-        public EntityUserRep(PhotographerContext context)
+        public UserRep(PhotographerContext context)
         {
             repo = new GenericRepository<EntityUser>(context);
         }
@@ -75,6 +73,13 @@ namespace Data.Clients
             {
                 throw;
             }
+        }
+
+        public async Task<EntityUser> GetById(Guid id)
+        {
+            var user = await repo.FirstOrDefaultAsync(x => x.Id == id);
+
+            return user;            
         }
     }
 }
