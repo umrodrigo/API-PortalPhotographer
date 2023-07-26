@@ -9,6 +9,8 @@ namespace Api.Tools
         public MapperProfile() 
         { 
             CreateMap<EntityUserView, EntityUser>().ReverseMap();
+            CreateMap<EntitySectorView, EntitySector>().ReverseMap();
+            CreateMap<EntityTypeView, EntityType>().ReverseMap();
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Api.Helpers
         public static IServiceCollection RegisterServices(IServiceCollection services)
         {
             services.AddScoped<IUserViewModel, UserViewModel>();
+            services.AddScoped<ISectorViewModel, SectorViewModel>();
 
             Services = services;
             return services;
