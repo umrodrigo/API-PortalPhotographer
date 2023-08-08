@@ -6,7 +6,6 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [ApiExplorerSettings(IgnoreApi = true)]
     public class UserController : ControllerBase
     {
         protected readonly IUserViewModel _vm;

@@ -1,4 +1,5 @@
-﻿using Api.ViewModel;
+﻿using Api.Services;
+using Api.ViewModel;
 using Api.ViewModel.Interface;
 using Data;
 
@@ -29,6 +30,9 @@ namespace Api.Helpers
         {
             services.AddScoped<IUserViewModel, UserViewModel>();
             services.AddScoped<ISectorViewModel, SectorViewModel>();
+            services.AddScoped<IPhotoViewModel, PhotoViewModel>();
+
+            services.AddScoped<IStorageService, StorageService>();
 
             Services = services;
             return services;

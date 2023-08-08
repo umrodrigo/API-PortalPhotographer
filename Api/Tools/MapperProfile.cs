@@ -11,6 +11,7 @@ namespace Api.Tools
             CreateMap<EntityUserView, EntityUser>().ReverseMap();
             CreateMap<EntitySectorView, EntitySector>().ReverseMap();
             CreateMap<EntityTypeView, EntityType>().ReverseMap();
+            CreateMap<EntityPhotoView, EntityPhoto>().ReverseMap();
         }
     }
 }

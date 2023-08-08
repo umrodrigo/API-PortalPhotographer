@@ -3,6 +3,9 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHttpClient();
+builder.Services.AddCustomCors(builder.Configuration, builder.Environment);
+
 // Add services to the container.
 builder.Services
     .AddDatabase(builder.Configuration, builder.Environment.IsDevelopment());
