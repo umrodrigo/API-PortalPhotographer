@@ -14,7 +14,7 @@ namespace Data.Models.Mapping
             builder.Property(x => x.Code);
 
             builder
-                .HasMany(many => many.Sector)
+                .HasMany(many => many.EntitySector)
                 .WithOne(one => one.Type)
                 .HasForeignKey(one => one.IdType);
         }
