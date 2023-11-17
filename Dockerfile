@@ -6,10 +6,10 @@ EXPOSE 5000
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["PortalPhotographer.sln", "."]
-COPY ["PortalPhotographer/Api/Api.csproj", "Api/"]
-COPY ["PortalPhotographer/Data/Data.csproj", "Data/"]
-RUN dotnet restore "PortalPhotographer/Api/Api.csproj"
-RUN dotnet restore "PortalPhotographer/Data/Data.csproj"
+COPY ["Api/Api.csproj", "Api/"]
+COPY ["Data/Data.csproj", "Data/"]
+RUN dotnet restore "Api/Api.csproj"
+RUN dotnet restore "Data/Data.csproj"
 COPY . .
 WORKDIR "/src/Api"
 RUN dotnet build Api.csproj" -c Release -o /app/build
